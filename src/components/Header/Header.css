@@ -1,0 +1,114 @@
+.header {
+    background-color: #131921;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 15px 4px 10px;
+}
+
+.header .left_side {
+    display: flex;
+}
+
+.header .logo {
+    text-align: center;
+    margin: 1px;
+    margin-bottom: -5px;
+    padding: 6px 8px 0px 0px;
+    height: 42px;
+}
+
+a {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 8px 8px;
+
+}
+
+a:hover {
+    border: 1px solid #fff;
+    margin: -1px;
+    border-radius: 3px;
+}
+
+a span {
+    font-size: 14px;
+    margin-left: -10px;
+}
+
+.search {
+    padding: 10px 17px;
+    margin: -2px;
+    background: rgb(247, 155, 80);
+    border-radius:-27px 0px 0px 5px;
+}
+
+.lastpart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0.7;
+    width: 100%;
+}
+
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 5px;
+
+}
+
+.box:hover {
+  border: 2px solid rgb(247, 155, 80);
+  box-shadow: 0px 0px 3px 0px rgb(247, 155, 80);
+
+}
+.item:hover{
+    border: 1px solid #fff;
+    margin: -1px;
+    border-radius: 3px;
+    
+}
+
+
+
+.middile {
+    display: flex;
+    align-items: center;
+}
+
+.middile .all {
+    background: #ddd;
+    border-radius: 5px 0px 0px 5px;
+}
+.box{
+    padding: 2px;
+}
+
+.middile button {
+    padding: 10px 10px;
+    color: black;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    cursor: pointer;
+}
+
+.box_content {
+    display: flex;
+    align-items: center;
+}
+
+.box_content input {
+    width: 740px;
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: black;
+}
