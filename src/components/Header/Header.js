@@ -5,6 +5,7 @@ import { FiMapPin } from 'react-icons/fi'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import { FaShoppingCart } from "react-icons/fa"
 import { IoIosFlag } from "react-icons/io"
+import Subheader from '../Subheader/Subheader'
 
 
 const Header = () => {
@@ -46,8 +47,9 @@ const Header = () => {
                         <h5>& Order</h5>
                     </div>
                     <div className="item"><FaShoppingCart /> </div>
-                </div>
+                </div>        
             </div>
+            <Subheader />
         </>
     )
 }
