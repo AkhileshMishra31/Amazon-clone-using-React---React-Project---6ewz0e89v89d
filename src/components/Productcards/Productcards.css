@@ -1,0 +1,27 @@
+.product_card {
+    background-color: white;
+    padding: 10px;
+}
+
+.product_card h1 {
+    font-size: 21px !important;
+    line-height: 27.3px !important;
+    color: black;
+}
+
+.product_images {
+    height:100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
+    row-gap: 0px;
+}
+
+.product_images span{
+    color: black;
+}
+
+
+.product_images div {
+   margin-top: 20px
+}
