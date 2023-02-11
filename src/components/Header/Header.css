@@ -5,6 +5,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 4px 15px 4px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .header .left_side {
