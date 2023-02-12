@@ -22,7 +22,7 @@
     height: 42px;
 }
 
-a {
+.header a {
     display: flex;
     text-align: center;
     align-items: center;
@@ -31,7 +31,7 @@ a {
 
 }
 
-a:hover {
+.header a:hover {
     border: 1px solid #fff;
     margin: -1px;
     border-radius: 3px;

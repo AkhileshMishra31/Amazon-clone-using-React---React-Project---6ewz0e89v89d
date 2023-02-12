@@ -16,7 +16,8 @@
     "pure-react-carousel": "^1.30.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-icons": "^4.7.1"
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.8.1"
   },
   "jest": {
     "moduleNameMapper": {

@@ -13,7 +13,7 @@ const App = () => {
       <div className='product_section'>
         <Products />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

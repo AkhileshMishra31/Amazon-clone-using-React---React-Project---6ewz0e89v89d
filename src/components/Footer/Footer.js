@@ -4,7 +4,7 @@ import "./Footer.css"
 const Footer = () => {
     return (
         <>
-            <footer>
+            <footer className='footer'>
                 <div className="top text-center">
                     <a href="#nav-top">Back to top</a>
                 </div>
@@ -58,7 +58,18 @@ const Footer = () => {
                         <li><a href="#" className="select"><i className="flag-icon-us" />United States</a></li>
                     </ul>
                 </div>
-                
+
+                <div className='last'>
+                    <div className='last_part'>
+                        <ul>
+                            <li>Conditions of Use</li>
+                            <li> Privacy Notice</li>
+                            <li>Interest-Based Ads</li>
+                        </ul>
+                        <p>© 1996-2022, Amazon.com, Inc. or its affiliates</p>
+                    </div>
+                </div>
+
             </footer>
         </>
     )

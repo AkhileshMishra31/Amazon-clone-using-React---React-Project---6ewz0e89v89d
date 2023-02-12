@@ -6,6 +6,20 @@
     align-items: center;
     justify-content: space-between;
 }
+.Subheader a {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 8px 8px;
+
+}
+
+.Subheader a:hover {
+    border: 1px solid #fff;
+    margin: -1px;
+    border-radius: 3px;
+}
 .Subheader .left{
     display: flex;
     flex: 0.4;
