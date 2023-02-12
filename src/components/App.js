@@ -1,20 +1,52 @@
 import React from 'react'
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import '../styles/App.css';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import Homescreen from './Homescreen/Homescreen';
+import Login from './Login/Login';
 import Products from './Products/Products';
-const App = () => {
 
+
+const Layout = ({ children }) => {
   return (
-    <div id="main">
-      <Header />
-      <Homescreen />
-      <div className='product_section'>
-        <Products />
+    <>
+      <div id="main">
+        <Header />
+        <Homescreen />
+        <div className='product_section'>
+          {children}
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
+  )
+}
+const Layouttow = ({ children }) => {
+  return (
+    <>
+      <div id="main">
+        <Header />
+        <div className='product_section'>
+          {children}
+        </div>
+        <Footer />
+      </div>
+    </>
+  )
+}
+
+const App = () => {
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<><Layout><Products /></Layout></>} />
+          <Route path="/login" element={<><Login /></>} />
+          <Route path="*" element={<h1>not found</h1>} />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 

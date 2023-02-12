@@ -6,6 +6,7 @@ import { IoMdArrowDropdown } from 'react-icons/io'
 import { FaShoppingCart } from "react-icons/fa"
 import { IoIosFlag } from "react-icons/io"
 import Subheader from '../Subheader/Subheader'
+import { NavLink } from 'react-router-dom'
 
 
 const Header = () => {
@@ -13,7 +14,8 @@ const Header = () => {
         <>
             <div className='header'>
                 <div className='left_side'>
-                    <a href="#"><img className='logo' src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" /></a>
+                    <NavLink to="/"><img className='logo' src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />
+                    </NavLink>
                     <div className="item adress">
                         <p>  <FiMapPin className='map' />hello,</p>
                         <h5>enter your address</h5>
@@ -34,9 +36,11 @@ const Header = () => {
                     </div>
                 </div>
                 <div className='lastpart'>
-                    <div className="item">
-                        <IoIosFlag />
-                        <h5>Login,sign up<IoMdArrowDropdown /></h5>
+                    <div>
+                        <NavLink className="item" to="/login">
+                            <IoIosFlag />
+                            <h5>Login,sign up<IoMdArrowDropdown /></h5>
+                        </NavLink>
                     </div>
                     <div className="item">
                         <p>Hello,</p>
@@ -47,7 +51,7 @@ const Header = () => {
                         <h5>& Order</h5>
                     </div>
                     <div className="item"><FaShoppingCart /> </div>
-                </div>        
+                </div>
             </div>
             <Subheader />
         </>
