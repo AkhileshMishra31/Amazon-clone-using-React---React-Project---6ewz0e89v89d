@@ -1,0 +1,105 @@
+.shoppingcart {
+    width: 100%;
+    min-height: 700px;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.shoppingcart_left {
+    width: 75%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shoppingcart_left_content {
+    width: 98%;
+    height: 98%;
+
+    background-color: white;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.shoppingcart_right {
+    width: 25%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shoppingcart_right_content {
+    width: 98%;
+    height: 98%;
+    background-color: transparent;
+    border: none;
+  
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.shopping_cart_heading h1{
+    color: black;
+    padding: 10px;
+}
+.shopping_cart_heading{
+   border-bottom: 1px solid grey;
+}
+.shoppingcart_right_subtotal {
+    width: 95%;
+    height: 50%;
+    background-color: white;
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.shopping_items{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: 213px;
+}
+.shopping_images{
+    padding: 2px;
+   
+    flex: 0.2;
+}
+.shopping_images img{
+   height: 150px;
+   width: 200px;
+   object-fit: contain;
+}
+.shopping_description{
+    height: 87%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.shopping_description h1{
+    color: black;
+    font-size: 1.2rem;
+}
+.shopping_description h6{
+    color: green;
+    padding: 2px;
+}
+.shopping_description p ,.shopping_description span{
+    color: black;
+    font-size: 0.8rem;
+}
+
+.shopping_description button{
+    color: black;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    background-color:  rgb(247, 155, 80);
+    background: rgb(247, 155, 80);
+    cursor: pointer;
+}

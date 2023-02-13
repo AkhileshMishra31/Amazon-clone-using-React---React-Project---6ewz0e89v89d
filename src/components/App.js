@@ -6,6 +6,7 @@ import Header from './Header/Header';
 import Homescreen from './Homescreen/Homescreen';
 import Login from './Login/Login';
 import Products from './Products/Products';
+import Shoppingcart from './Shoppingcart/Shoppingcart';
 
 
 const Layout = ({ children }) => {
@@ -27,9 +28,7 @@ const Layouttow = ({ children }) => {
     <>
       <div id="main">
         <Header />
-        <div className='product_section'>
-          {children}
-        </div>
+        {children}
         <Footer />
       </div>
     </>
@@ -43,6 +42,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<><Layout><Products /></Layout></>} />
           <Route path="/login" element={<><Login /></>} />
+          <Route path='/checkout' element={<><Layouttow><Shoppingcart /></Layouttow></>} />
           <Route path="*" element={<h1>not found</h1>} />
         </Routes>
       </BrowserRouter>

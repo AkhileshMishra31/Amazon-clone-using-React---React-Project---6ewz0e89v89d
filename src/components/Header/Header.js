@@ -50,7 +50,7 @@ const Header = () => {
                         <p>Returns</p>
                         <h5>& Order</h5>
                     </div>
-                    <div className="item"><FaShoppingCart /> </div>
+                    <NavLink to="/checkout" className="item"><FaShoppingCart /> </NavLink>
                 </div>
             </div>
             <Subheader />
