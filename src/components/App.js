@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import reducer, { initialState } from '../Context/CartReducer';
 import '../styles/App.css';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
@@ -12,6 +13,7 @@ import Shoppingcart from './Shoppingcart/Shoppingcart';
 const Layout = ({ children }) => {
   return (
     <>
+
       <div id="main">
         <Header />
         <Homescreen />
@@ -20,6 +22,7 @@ const Layout = ({ children }) => {
         </div>
         <Footer />
       </div>
+
     </>
   )
 }
@@ -27,9 +30,11 @@ const Layouttow = ({ children }) => {
   return (
     <>
       <div id="main">
+
         <Header />
         {children}
         <Footer />
+
       </div>
     </>
   )

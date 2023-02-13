@@ -51,7 +51,8 @@
 }
 .shoppingcart_right_subtotal {
     width: 95%;
-    height: 50%;
+    height: 30%;
+    border-radius: 5px;
     background-color: white;
     margin-top: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -92,7 +93,7 @@
     font-size: 0.8rem;
 }
 
-.shopping_description button{
+.shopping_description .remove_button{
     color: black;
     width: 200px;
     text-align: center;
@@ -102,4 +103,22 @@
     background-color:  rgb(247, 155, 80);
     background: rgb(247, 155, 80);
     cursor: pointer;
+}
+.button_section{
+    display: flex;
+    justify-content: space-between;
+    justify-content: flex-start;
+    padding: 5px;
+}
+.button_section div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15px;
+}
+.button_section div button{
+    color: black;
+}
+.button_section div p{
+    padding: 10px;
 }

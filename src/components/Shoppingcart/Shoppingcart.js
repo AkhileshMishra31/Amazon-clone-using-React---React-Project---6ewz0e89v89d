@@ -1,7 +1,12 @@
 import React from 'react'
+import { useStateValue } from '../../Context/CartContext'
+import Cartpage from '../Cartpage'
+import Subtotal from '../Subtotal/Subtotal'
 import "./Shoppingcart.css"
 
 const Shoppingcart = () => {
+    const [{ basket }, dispatch] = useStateValue();
+    console.log(basket);
     return (
         <div className='shoppingcart'>
             <div className='shoppingcart_left'>
@@ -10,20 +15,17 @@ const Shoppingcart = () => {
                         <h1>Shopping Cart</h1>
                     </div>
                     <div className='shopping_cart_item'>
-                        
-                        <div className='shopping_items'>
-                            <div className='shopping_images'>
-                                <img src='https://m.media-amazon.com/images/I/81IXkYSNpNL._AC_AA180_.jpg' />
-                            </div>
-                            <div className='shopping_description'>
-                                <h1>AUGO Magnetic Screen Door - Self Sealing, Heavy Duty, Hands Free Mesh Partition Keeps Bugs Out - Pet and Kid Friendly - Patent Pending Keep Open Feature - 38" x 83"</h1>
-                                <h6>In stock</h6>
-                                <p>Sold by diyoraselling</p>
-                                <p>$<span>233</span></p>
-                                <button>Remove from cart</button>
-                            </div>
-                        </div>
-
+                        {
+                            basket?.map((item) => {
+                                return (
+                                    <>
+                                        <Cartpage id={item.id} title={item.title} image={item.image} price={item.price}
+                                            quantity={item.quantity}
+                                        />
+                                    </>
+                                )
+                            })
+                        }
                     </div>
                     <div className='shopping_cart_subtotal'>
 
@@ -33,7 +35,7 @@ const Shoppingcart = () => {
             <div className='shoppingcart_right'>
                 <div className='shoppingcart_right_content'>
                     <div className='shoppingcart_right_subtotal'>
-
+                        <Subtotal />
                     </div>
                 </div>
 
