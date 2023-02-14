@@ -11,8 +11,6 @@ const Cartpage = ({ id, title, image, price, rating, quantity }) => {
         })
     }
 
-
-
     const removefrombasket = () => {
         console.log(id);
         dispatch({

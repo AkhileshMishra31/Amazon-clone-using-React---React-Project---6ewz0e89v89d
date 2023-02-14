@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { auth } from '../Firebase';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import reducer, { initialState } from '../Context/CartReducer';
 import '../styles/App.css';
@@ -8,12 +9,12 @@ import Homescreen from './Homescreen/Homescreen';
 import Login from './Login/Login';
 import Products from './Products/Products';
 import Shoppingcart from './Shoppingcart/Shoppingcart';
+import { useStateAuth } from '../Context/AuthContext';
 
 
 const Layout = ({ children }) => {
   return (
     <>
-
       <div id="main">
         <Header />
         <Homescreen />
@@ -22,7 +23,6 @@ const Layout = ({ children }) => {
         </div>
         <Footer />
       </div>
-
     </>
   )
 }
@@ -41,6 +41,24 @@ const Layouttow = ({ children }) => {
 }
 
 const App = () => {
+  const [{ user }, dispatch] = useStateAuth()
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        console.log(user.email);
+        dispatch({
+          type: "SET_USER",
+          profile: {
+            email: user.email
+          }
+        })
+      }
+      else {
+        console.log(false);
+      }
+    })
+  }, [])
+
   return (
     <>
       <BrowserRouter>

@@ -7,9 +7,23 @@ import { FaShoppingCart } from "react-icons/fa"
 import { IoIosFlag } from "react-icons/io"
 import Subheader from '../Subheader/Subheader'
 import { NavLink } from 'react-router-dom'
+import { useStateAuth } from '../../Context/AuthContext'
+import { auth } from '../../Firebase'
 
 
 const Header = () => {
+
+    const [{ user }, dispatch] = useStateAuth();
+    const signout = () => {
+        auth.signOut().then(() => {
+            dispatch({
+                type: "LOG_OUT"
+            })
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
+
     return (
         <>
             <div className='header'>
@@ -37,10 +51,11 @@ const Header = () => {
                 </div>
                 <div className='lastpart'>
                     <div>
-                        <NavLink className="item" to="/login">
-                            <IoIosFlag />
-                            <h5>Login,sign up<IoMdArrowDropdown /></h5>
+                        <NavLink className={user ? "authstate" : "item"} to={user ? "/" : "/login"}>
+                            {user ? <h5>{user.email}</h5> : <h5>Login,sign up</h5>}
+                            {user ? <button onClick={signout} className='signout'>Signout</button> : <IoIosFlag />}
                         </NavLink>
+
                     </div>
                     <div className="item">
                         <p>Hello,</p>

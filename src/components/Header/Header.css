@@ -1,5 +1,5 @@
 .header {
-    background-color:#111212;
+    background-color: #111212;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -31,7 +31,7 @@
 
 }
 
-.header a:hover {
+.header .item:hover {
     border: 1px solid #fff;
     margin: -1px;
     border-radius: 3px;
@@ -46,7 +46,7 @@ a span {
     padding: 10px 17px;
     margin: -2px;
     background: rgb(247, 155, 80);
-    border-radius:-27px 0px 0px 5px;
+    border-radius: -27px 0px 0px 5px;
 }
 
 .lastpart {
@@ -66,16 +66,34 @@ a span {
 
 }
 
+.authstate {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.authstate h5 {
+    font-size: 0.6rem;
+}
+
+.authstate button {
+    padding: 5px;
+    color:black;
+    cursor: pointer;
+    background-color: white;
+}
+
 .box:hover {
-  border: 2px solid rgb(247, 155, 80);
-  box-shadow: 0px 0px 3px 0px rgb(247, 155, 80);
+    border: 2px solid rgb(247, 155, 80);
+    box-shadow: 0px 0px 3px 0px rgb(247, 155, 80);
 
 }
-.item:hover{
+
+.item:hover {
     border: 1px solid #fff;
     margin: -1px;
     border-radius: 3px;
-    
+
 }
 
 
@@ -89,7 +107,8 @@ a span {
     background: #ddd;
     border-radius: 5px 0px 0px 5px;
 }
-.box{
+
+.box {
     padding: 2px;
 }
 
