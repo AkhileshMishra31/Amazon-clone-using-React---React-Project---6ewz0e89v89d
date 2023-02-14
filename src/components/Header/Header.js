@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Header.css"
 import { AiOutlineSearch } from 'react-icons/ai'
 import { FiMapPin } from 'react-icons/fi'
@@ -9,11 +9,14 @@ import Subheader from '../Subheader/Subheader'
 import { NavLink } from 'react-router-dom'
 import { useStateAuth } from '../../Context/AuthContext'
 import { auth } from '../../Firebase'
+import { getCartContents } from '../../Context/CartReducer'
+import { useStateValue } from '../../Context/CartContext'
 
 
 const Header = () => {
 
-    const [{ user }, dispatch] = useStateAuth();
+    const [{user}, dispatch] = useStateAuth();
+
     const signout = () => {
         auth.signOut().then(() => {
             dispatch({

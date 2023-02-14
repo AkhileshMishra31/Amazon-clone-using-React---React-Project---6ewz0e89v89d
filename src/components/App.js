@@ -54,7 +54,9 @@ const App = () => {
         })
       }
       else {
-        console.log(false);
+        dispatch({
+          type: "LOG_OUT"
+        })
       }
     })
   }, [])

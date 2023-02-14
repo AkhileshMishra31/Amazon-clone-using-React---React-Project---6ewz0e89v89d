@@ -46,7 +46,7 @@ const addQuantity = (productId, state) => {
         item => item.id === productId
     );
     if (updatedItemIndex < 0) {
-        updatedCart.push({ ...product, quantity: 1 });
+        return;
     } else {
         const updatedItem = {
             ...updatedCart[updatedItemIndex]
@@ -68,6 +68,7 @@ export const reducer = (state, action) => {
     console.log(action.id);
     switch (action.type) {
         case 'ADD_TO_BASKET':
+            gettotalvalue(state.basket)
             return addProductToCart(action.item, state);
         case 'REMOVE_FROM_BASKET':
             return removeProductFromCart(action.id, state)
@@ -94,11 +95,21 @@ export const reducer = (state, action) => {
             return addQuantity(action.id, state)
         case 'EMPTY_BASKET':
             return {
-                basket:null
+                basket: null
             }
         default:
             return state;
     }
 };
+
+
+
+// selectors
+export const gettotalvalue = (products) => {
+    const total = products.reduce((accumulator,current) => accumulator + current.price * current.quantity, 0)
+    return total
+}
+
+
 
 export default reducer;
