@@ -109,6 +109,10 @@ export const gettotalvalue = (products) => {
     const total = products.reduce((accumulator,current) => accumulator + current.price * current.quantity, 0)
     return total
 }
+export const totalitems = (products) => {
+    const totalitem = products.reduce((accumulator,current) => accumulator + current.quantity, 0)
+    return totalitem
+}
 
 
 

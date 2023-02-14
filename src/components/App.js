@@ -10,13 +10,15 @@ import Login from './Login/Login';
 import Products from './Products/Products';
 import Shoppingcart from './Shoppingcart/Shoppingcart';
 import { useStateAuth } from '../Context/AuthContext';
+import { useStateValue } from '../Context/CartContext';
 
 
 const Layout = ({ children }) => {
+  const [{ basket }, dispatch] = useStateValue();
   return (
     <>
       <div id="main">
-        <Header />
+        <Header basket={basket} />
         <Homescreen />
         <div className='product_section'>
           {children}
@@ -27,11 +29,12 @@ const Layout = ({ children }) => {
   )
 }
 const Layouttow = ({ children }) => {
+  const [{ basket }, dispatch] = useStateValue();
   return (
     <>
       <div id="main">
 
-        <Header />
+        <Header  basket={basket} />
         {children}
         <Footer />
 

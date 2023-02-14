@@ -9,13 +9,14 @@ import Subheader from '../Subheader/Subheader'
 import { NavLink } from 'react-router-dom'
 import { useStateAuth } from '../../Context/AuthContext'
 import { auth } from '../../Firebase'
-import { getCartContents } from '../../Context/CartReducer'
+import { getCartContents, totalitems } from '../../Context/CartReducer'
 import { useStateValue } from '../../Context/CartContext'
 
 
-const Header = () => {
+const Header = (props) => {
 
-    const [{user}, dispatch] = useStateAuth();
+    const [{ user }, dispatch] = useStateAuth();
+    
 
     const signout = () => {
         auth.signOut().then(() => {
@@ -68,7 +69,7 @@ const Header = () => {
                         <p>Returns</p>
                         <h5>& Order</h5>
                     </div>
-                    <NavLink to="/checkout" className="item"><FaShoppingCart /> </NavLink>
+                    <NavLink to="/checkout" className="item">{totalitems(props.basket)}<FaShoppingCart /> </NavLink>
                 </div>
             </div>
             <Subheader />
