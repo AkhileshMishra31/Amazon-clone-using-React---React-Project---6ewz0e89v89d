@@ -32,15 +32,23 @@
 }
 
 .payment_left {
-    flex: 0.4;   
+    flex: 0.4;
     padding: 5px;
 }
 
-.payment_right {
-   
+.payment_right {}
+
+.payment_method {
+    display: flex;
+    align-items: center;
 }
 
-.payment_method {}
+.payment_method .payment_right {
+    flex: 0.8;
+}
+.payment_method .payment_left {
+    flex: 0.2;
+}
 
 .payment_method h2 {
     color: black;

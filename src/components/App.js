@@ -12,7 +12,14 @@ import Shoppingcart from './Shoppingcart/Shoppingcart';
 import { useStateAuth } from '../Context/AuthContext';
 import { useStateValue } from '../Context/CartContext';
 import Payment from './Payment/Payment';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
+
+
+const promise = loadStripe(
+  "pk_test_51JZrQMSJRl1m3ljvQryfZdJZxyscbHseK0JiT4EbYBSL4CovhpmyTvYv1AHbzZ8jDSl5KT6O6w8O9ZxFbWxhwmLt00xQSXtFdf"
+);
 
 const Layout = ({ children }) => {
   const [{ basket }, dispatch] = useStateValue();
@@ -35,7 +42,7 @@ const Layouttow = ({ children }) => {
     <>
       <div id="main">
 
-        <Header  basket={basket} />
+        <Header basket={basket} />
         {children}
         <Footer />
 
@@ -72,7 +79,7 @@ const App = () => {
           <Route path="/" element={<><Layout><Products /></Layout></>} />
           <Route path="/login" element={<><Login /></>} />
           <Route path='/checkout' element={<><Layouttow><Shoppingcart /></Layouttow></>} />
-          <Route path='/payment' element={<><Layouttow><Payment/></Layouttow></>} />
+          <Route path='/payment' element={<><Layouttow> <Elements stripe={promise}><Payment /></Elements></Layouttow></>} />
           <Route path="*" element={<h1>not found</h1>} />
         </Routes>
       </BrowserRouter>
