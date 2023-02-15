@@ -1,0 +1,47 @@
+.payment {
+    background-color: white;
+    min-height: 500px;
+    height: max-content;
+}
+
+.payment_section {
+    padding: 10px;
+}
+
+.dilevery_address {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid grey;
+}
+
+.dilevery_address h1,
+.dilevery_address h2,
+.dilevery_address span {
+    color: black;
+    padding: 5px;
+}
+
+.dilevery_items {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid grey;
+}
+
+.dilevery_items h2 {
+    color: black;
+}
+
+.payment_left {
+    flex: 0.4;   
+    padding: 5px;
+}
+
+.payment_right {
+   
+}
+
+.payment_method {}
+
+.payment_method h2 {
+    color: black;
+}

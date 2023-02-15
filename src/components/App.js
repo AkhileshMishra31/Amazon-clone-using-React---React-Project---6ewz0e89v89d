@@ -11,6 +11,7 @@ import Products from './Products/Products';
 import Shoppingcart from './Shoppingcart/Shoppingcart';
 import { useStateAuth } from '../Context/AuthContext';
 import { useStateValue } from '../Context/CartContext';
+import Payment from './Payment/Payment';
 
 
 const Layout = ({ children }) => {
@@ -71,6 +72,7 @@ const App = () => {
           <Route path="/" element={<><Layout><Products /></Layout></>} />
           <Route path="/login" element={<><Login /></>} />
           <Route path='/checkout' element={<><Layouttow><Shoppingcart /></Layouttow></>} />
+          <Route path='/payment' element={<><Layouttow><Payment/></Layouttow></>} />
           <Route path="*" element={<h1>not found</h1>} />
         </Routes>
       </BrowserRouter>
