@@ -95,7 +95,8 @@ export const reducer = (state, action) => {
             return addQuantity(action.id, state)
         case 'EMPTY_BASKET':
             return {
-                basket: null
+                ...state,
+                basket: []
             }
         default:
             return state;

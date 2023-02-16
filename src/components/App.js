@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import { auth } from '../Firebase';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import reducer, { initialState } from '../Context/CartReducer';
@@ -15,9 +15,7 @@ import Payment from './Payment/Payment';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
-
-
-const promise = loadStripe(
+const stripePromise = loadStripe(
   "pk_test_51JZrQMSJRl1m3ljvQryfZdJZxyscbHseK0JiT4EbYBSL4CovhpmyTvYv1AHbzZ8jDSl5KT6O6w8O9ZxFbWxhwmLt00xQSXtFdf"
 );
 
@@ -53,6 +51,14 @@ const Layouttow = ({ children }) => {
 
 const App = () => {
   const [{ user }, dispatch] = useStateAuth()
+  const [clientSecret, setClientSecret] = useState("");
+  // const appearance = {
+  //   theme: 'stripe',
+  // };
+  // const options = {
+  //   clientSecret,
+  //   appearance,
+  // };
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -72,6 +78,8 @@ const App = () => {
     })
   }, [])
 
+
+
   return (
     <>
       <BrowserRouter>
@@ -79,7 +87,7 @@ const App = () => {
           <Route path="/" element={<><Layout><Products /></Layout></>} />
           <Route path="/login" element={<><Login /></>} />
           <Route path='/checkout' element={<><Layouttow><Shoppingcart /></Layouttow></>} />
-          <Route path='/payment' element={<><Layouttow> <Elements stripe={promise}><Payment /></Elements></Layouttow></>} />
+          <Route path='/payment' element={<><Layouttow> <Elements stripe={stripePromise}><Payment /></Elements></Layouttow></>} />
           <Route path="*" element={<h1>not found</h1>} />
         </Routes>
       </BrowserRouter>

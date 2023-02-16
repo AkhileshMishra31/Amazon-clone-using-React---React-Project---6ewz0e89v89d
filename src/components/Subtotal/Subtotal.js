@@ -2,7 +2,7 @@ import React from 'react'
 import CurrencyFormat from 'react-currency-format-latest'
 import { useNavigate } from 'react-router-dom'
 import { useStateValue } from '../../Context/CartContext'
-import { gettotalvalue } from '../../Context/CartReducer'
+import { gettotalvalue, totalitems } from '../../Context/CartReducer'
 import "./Subtotal.css"
 
 const Subtotal = () => {
@@ -18,7 +18,7 @@ const Subtotal = () => {
                         </p>
                         <p></p>
                         <p className='subototal_p'>
-                            Subtotal (2 items): <strong>{value}</strong>
+                            Subtotal ({totalitems(basket)}items:): <strong>{value}</strong>
                         </p>
                         <small className="subtotal__gift">
                             <input type="checkbox" /> This order contains a gift
