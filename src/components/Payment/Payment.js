@@ -33,11 +33,11 @@ const Payment = () => {
         }
 
         const getClientSecret = async () => {
-            const response = await axios({
-                method: 'post',
-                // Stripe expects the total in a currencies subunits
-                url: `/payments/create?total=${gettotalvalue(basket) * 100}`
-            });
+            // const response = await axios({
+            //     method: 'post',
+            //     // Stripe expects the total in a currencies subunits
+            //     url: `/payments/create?total=${gettotalvalue(basket) * 100}`
+            // });
             // setClientSecret(response.data.clientSecret)
             console.log(response);
         }
