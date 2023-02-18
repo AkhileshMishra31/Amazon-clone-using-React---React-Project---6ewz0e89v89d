@@ -2,7 +2,7 @@
     position: absolute;
     z-index: 2;
     top: 500px;
-    left: 0;
+    left: 20px;
     right: 0;
     padding: 20px;
     /* visibility: hidden; */
@@ -23,7 +23,7 @@
 .product_cards{
    width: 90%; 
    height: 60vh;
-   padding: 10px;
+   padding: 20px;
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr;
    grid-column-gap: 1rem;

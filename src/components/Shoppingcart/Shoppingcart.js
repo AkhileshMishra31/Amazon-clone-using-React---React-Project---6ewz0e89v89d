@@ -16,7 +16,7 @@ const Shoppingcart = () => {
                     </div>
                     <div className='shopping_cart_item'>
                         {
-                            basket?.map((item) => {
+                         basket?.length<1?<div className='empty_basket'><img src="https://shop.millenniumbooksource.com/static/images/cart1.png"/></div>:basket?.map((item) => {
                                 return (
                                     <>
                                         <Cartpage id={item.id} title={item.title} image={item.image} price={item.price}

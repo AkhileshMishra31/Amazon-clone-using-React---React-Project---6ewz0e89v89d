@@ -6,7 +6,7 @@ import { IoMdArrowDropdown } from 'react-icons/io'
 import { FaShoppingCart } from "react-icons/fa"
 import { IoIosFlag } from "react-icons/io"
 import Subheader from '../Subheader/Subheader'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { useStateAuth } from '../../Context/AuthContext'
 import { auth } from '../../Firebase'
 import { getCartContents, totalitems } from '../../Context/CartReducer'
@@ -16,7 +16,7 @@ import { useStateValue } from '../../Context/CartContext'
 const Header = (props) => {
 
     const [{ user }, dispatch] = useStateAuth();
-    
+
 
     const signout = () => {
         auth.signOut().then(() => {
@@ -63,12 +63,17 @@ const Header = (props) => {
                     </div>
                     <div className="item">
                         <p>Hello,</p>
+
                         <h5>Account & Lists<IoMdArrowDropdown /></h5>
+
                     </div>
-                    <div className="item">
-                        <p>Returns</p>
-                        <h5>& Order</h5>
-                    </div>
+                    <NavLink to="/orders">
+                        <div className="item">
+
+                            <p>Returns</p>
+                            <h5>& Order</h5>
+                        </div>
+                    </NavLink>
                     <NavLink to="/checkout" className="item">{totalitems(props.basket)}<FaShoppingCart /> </NavLink>
                 </div>
             </div>

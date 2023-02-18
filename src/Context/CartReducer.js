@@ -73,26 +73,9 @@ export const reducer = (state, action) => {
         case 'REMOVE_FROM_BASKET':
             return removeProductFromCart(action.id, state)
 
-        case "REMOVE":
-            const index = state.basket.findIndex(
-                (basketItem) => basketItem.id === action.id
-            );
-            let newBasket = [...state.basket];
-
-            if (index >= 0) {
-                newBasket.splice(index, 1);
-
-            } else {
-                console.warn(
-                    `Cant remove product (id: ${action.id}) as its not in basket!`
-                )
-            }
-            return {
-                ...state,
-                basket: newBasket
-            }
         case "ADD_QUANTITY":
             return addQuantity(action.id, state)
+
         case 'EMPTY_BASKET':
             return {
                 ...state,
@@ -107,11 +90,11 @@ export const reducer = (state, action) => {
 
 // selectors
 export const gettotalvalue = (products) => {
-    const total = products.reduce((accumulator,current) => accumulator + current.price * current.quantity, 0)
+    const total = products.reduce((accumulator, current) => accumulator + current.price * current.quantity, 0)
     return total
 }
 export const totalitems = (products) => {
-    const totalitem = products.reduce((accumulator,current) => accumulator + current.quantity, 0)
+    const totalitem = products.reduce((accumulator, current) => accumulator + current.quantity, 0)
     return totalitem
 }
 

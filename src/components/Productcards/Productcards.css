@@ -25,3 +25,19 @@
 .product_images div {
    margin-top: 20px
 }
+
+.product_images img{
+    height: 120px;
+    width: 180px;
+    object-fit: contain;
+}
+.product_images span{
+    text-align: center;
+}
+.adevert{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+
+}

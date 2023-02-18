@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { auth } from '../Firebase';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import reducer, { initialState } from '../Context/CartReducer';
@@ -14,6 +14,7 @@ import { useStateValue } from '../Context/CartContext';
 import Payment from './Payment/Payment';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import Orders from './Orders/Orders';
 
 const stripePromise = loadStripe(
   "pk_test_51JZrQMSJRl1m3ljvQryfZdJZxyscbHseK0JiT4EbYBSL4CovhpmyTvYv1AHbzZ8jDSl5KT6O6w8O9ZxFbWxhwmLt00xQSXtFdf"
@@ -88,6 +89,7 @@ const App = () => {
           <Route path="/login" element={<><Login /></>} />
           <Route path='/checkout' element={<><Layouttow><Shoppingcart /></Layouttow></>} />
           <Route path='/payment' element={<><Layouttow> <Elements stripe={stripePromise}><Payment /></Elements></Layouttow></>} />
+          <Route path='/orders' element={<><Layouttow> <Orders /></Layouttow></>} />
           <Route path="*" element={<h1>not found</h1>} />
         </Routes>
       </BrowserRouter>

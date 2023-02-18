@@ -1,0 +1,23 @@
+.orders{
+    min-height: 300px;
+    height: max-content;
+}
+.no_orders{
+    display: flex;
+    justify-content: center;
+    color: black;
+    align-items: center;
+}
+.no_orders h1{
+    color: black;
+}
+.order_order{
+    background-color:transparent;
+}
+.order_order h1{
+    color: black;
+}
+.order_order .order_history{
+    color: black;
+    text-align: center;
+}

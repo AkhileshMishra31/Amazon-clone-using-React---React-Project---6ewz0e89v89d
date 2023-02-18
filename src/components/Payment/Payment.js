@@ -27,7 +27,7 @@ const Payment = () => {
 
 
     useEffect(() => {
-        // generate the special stripe secret which allows us to charge a customer
+
         if (!user) {
             navigate("/")
         }
@@ -58,6 +58,20 @@ const Payment = () => {
         }).then(({ paymentMethod }) => {
             console.log(paymentMethod);
 
+            try {
+                db
+                    .collection('users')
+                    .doc(user?.email)
+                    .collection('orders')
+                    .doc(paymentMethod.id)
+                    .set({
+                        basket: basket,
+                        amount: gettotalvalue(basket),
+                        created: Date.now()
+                    })
+            } catch (error) {
+                console.log(error);
+            }
 
             setSucceeded(true);
             setError(null)
@@ -67,6 +81,7 @@ const Payment = () => {
             dispatch({
                 type: "EMPTY_BASKET"
             })
+            navigate("/orders", { replace: true })
 
         }).catch((err) => {
 
@@ -116,7 +131,7 @@ const Payment = () => {
                         <form >
                             <CardElement onChange={handleChange} />
                             <button onClick={handleSubmit} disabled={processing || disabled || succeeded}>
-                                <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                                <span className='payment_button'>{processing ? <p>Processing</p> : "Buy Now"}</span>
                             </button>
                         </form>
                     </div>

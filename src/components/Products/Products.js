@@ -9,17 +9,32 @@ const Products = () => {
                 <div className='home_row'>
                     <Product
                         id="12321341"
-                        title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
+                        title="Bhagvad Gita As It Is English New Edition Hardcover – 1 January 2019"
                         price={11.96}
                         rating={5}
-                        image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg"
+                        image="https://m.media-amazon.com/images/I/511Hw7p0V0L._SX291_BO1,204,203,200_.jpg"
                     />
+                   
                     <Product
                         id="12321342"
-                        title="AmazonBasics 108cms (43 inch) Full HD Smart LED Fire TV with Front Firing Speakers 20W, 2023 Model"
-                        price={239.0}
+                        title="Dattatreya Brass Lord Krishna Idol Figurine Sculpture Decorative Showpiece, Height 10 Inches"
+                        price={210.0}
                         rating={4}
-                        image="https://m.media-amazon.com/images/I/71h8jRpTg2L._SL1500_.jpg"
+                        image="https://m.media-amazon.com/images/I/8164zFRYcWL._SX522_.jpg"
+                    />
+                     <Product
+                        id="123213"
+                        title="eCraftIndia Meditatin Lord Shiva Cold Cast Bronze Resin Decorative Figurine, Brown and Golden, One Size (UBKC240)"
+                        price={210.0}
+                        rating={4}
+                        image="https://m.media-amazon.com/images/I/81zlDWLez8L._SX522_.jpg"
+                    />
+                     <Product
+                        id="123"
+                        title="Heartily® Mangal Beautiful Wooden Pooja Stand for Home/Mandir for Home/Temple for Home and Office/Puja"
+                        price={210.0}
+                        rating={4}
+                        image="https://m.media-amazon.com/images/I/81cZrglhmYL._SX522_.jpg"
                     />
                 </div>
                 <div className='home_row'>
@@ -30,6 +45,13 @@ const Products = () => {
                         rating={5}
                         image="https://m.media-amazon.com/images/I/71Z+hrFS2qL._SX679_.jpg"
                     />
+                     <Product
+                        id="9039106"
+                        title="ASIAN Men's Thar-04 Sports Running,Walking & Gym Shoes with Eva Sole Extra Jump Casual Sneaker"
+                        price={239.0}
+                        rating={4}
+                        image="https://m.media-amazon.com/images/I/610fN3RyKFL._UY695_.jpg"
+                    />
                     <Product
                         id="12321344"
                         title="Nv Home Decor Sheesham Wood CNC 6 Seater Dining Table Set with Bench and Chair for Dining Room Home Solid Wood Dining Table 6 Seater for Living Room Hotels (Honey Finish)"
@@ -39,10 +61,10 @@ const Products = () => {
                     />
                     <Product
                         id="12321345"
-                        title="ASIAN Men's Thar-04 Sports Running,Walking & Gym Shoes with Eva Sole Extra Jump Casual Sneaker"
+                        title="WWE 2K23 | Standard Edition | PlayStation 5"
                         price={239.0}
                         rating={4}
-                        image="https://m.media-amazon.com/images/I/610fN3RyKFL._UY695_.jpg"
+                        image="https://m.media-amazon.com/images/I/51YInfPusJL._SX569_.jpg"
                     />
                 </div>
 

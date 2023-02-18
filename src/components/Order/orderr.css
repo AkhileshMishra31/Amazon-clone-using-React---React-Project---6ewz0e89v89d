@@ -1,0 +1,61 @@
+.order {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.order .order_heading {
+    color: black;
+    margin-left: 120px;
+}
+
+.order__id {
+    margin-left: 120px;
+    color: black;
+}
+
+.order__id small {
+    color: black;
+}
+
+.product_image {
+    flex: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product_image img {
+    height: 120px;
+}
+
+.product_decritiom {
+    flex: 0.7;
+    font-size: 0.7rem;
+}
+
+.product_decritiom .order_history {
+    color: black;
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+.product_decritiom p {
+    color: black;
+    font-size: 1rem;
+}
+
+.order_total {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.products_db {
+    width: 60%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
